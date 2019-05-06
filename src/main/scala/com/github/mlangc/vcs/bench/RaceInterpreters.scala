@@ -21,9 +21,9 @@ object RaceInterpreters extends App with TmpFilesSupport {
   private val logger = new ZioLogger[RaceInterpreters.type]
 
   object cfg {
-    val historyLen: Int Refined Positive = 5000
+    val historyLen: Int Refined Positive = 500
     val numRaces: Int Refined Positive = 10
-    val customTmpDir: Option[File] = Some(new File("/home/mlangc/tmp/vcs-bench"))
+    val customTmpDir: Option[File] = None //Some(new File("/home/mlangc/tmp/vcs-bench"))
   }
 
   def run(args: List[String]): ZIO[Any, Nothing, Int] = {
