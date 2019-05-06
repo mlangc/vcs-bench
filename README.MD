@@ -10,5 +10,5 @@ in a terminal. To tweak the configuration, adapt the `cfg` object at the beginni
 of the `com.github.mlangc.vcs.bench.RaceInterpreters` class.
 
 ## Understanding the Code
-This benchmark is implemented in purely functional [Scala](https://www.scala-lang.org/) based on 
+This benchmark is implemented in purely functional [Scala](https://www.scala-lang.org/) using 
 [scalaz.ZIO](https://scalaz.github.io/scalaz-zio/).
