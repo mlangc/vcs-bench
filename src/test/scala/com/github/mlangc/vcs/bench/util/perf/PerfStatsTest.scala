@@ -7,7 +7,7 @@ import cats.syntax.option._
 import com.github.mlangc.vcs.bench.util.perf.PerfStats.Summary
 import org.scalactic.TypeCheckedTripleEquals
 import org.scalatest.FreeSpec
-import scalaz.zio.duration.Duration
+import zio.duration.Duration
 
 
 class PerfStatsTest extends FreeSpec with TypeCheckedTripleEquals {

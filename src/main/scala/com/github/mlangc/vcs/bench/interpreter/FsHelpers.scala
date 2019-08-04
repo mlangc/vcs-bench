@@ -6,8 +6,8 @@ import cats.data.Chain
 import com.github.mlangc.vcs.bench.model.Lines
 import com.github.mlangc.vcs.bench.model.Path
 import org.apache.commons.io.FileUtils
-import scalaz.zio.Task
-import scalaz.zio.ZIO
+import zio.Task
+import zio.ZIO
 
 import scala.collection.JavaConverters._
 

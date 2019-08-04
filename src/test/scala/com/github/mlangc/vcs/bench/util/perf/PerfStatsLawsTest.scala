@@ -6,10 +6,10 @@ import cats.kernel.laws.discipline.MonoidTests
 import cats.tests.CatsSuite
 import org.scalacheck.Arbitrary
 import org.scalacheck.Gen
-import scalaz.zio.duration.Duration
+import zio.duration.Duration
 
 class PerfStatsLawsTest extends CatsSuite {
-  private implicit  def eqPerfStats = Eq.fromUniversalEquals[PerfStats]
+  private implicit  def eqPerfStats: Eq[PerfStats] = Eq.fromUniversalEquals[PerfStats]
 
   private implicit def arbPerfStats: Arbitrary[PerfStats] = {
     val genPerfStat: Gen[(Nops, Duration)] =

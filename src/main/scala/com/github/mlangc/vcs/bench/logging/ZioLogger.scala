@@ -4,10 +4,10 @@ import java.util.concurrent.TimeUnit
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import scalaz.zio.UIO
-import scalaz.zio.ZIO
-import scalaz.zio.clock.Clock.Live.clock
-import scalaz.zio.duration.Duration
+import zio.UIO
+import zio.ZIO
+import zio.clock.Clock.Live.clock
+import zio.duration.Duration
 
 class ZioLogger[T : reflect.ClassTag] {
   private var cache: Logger = _

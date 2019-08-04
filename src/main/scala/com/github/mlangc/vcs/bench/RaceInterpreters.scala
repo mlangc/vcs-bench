@@ -14,8 +14,8 @@ import com.github.mlangc.vcs.bench.util.zio.StopWatch
 import eu.timepit.refined.api.Refined
 import eu.timepit.refined.auto._
 import eu.timepit.refined.numeric.Positive
-import scalaz.zio._
-import scalaz.zio.blocking.Blocking
+import zio._
+import zio.blocking.Blocking
 
 object RaceInterpreters extends App with TmpFilesSupport {
   private val logger = new ZioLogger[RaceInterpreters.type]

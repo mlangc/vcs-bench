@@ -1,9 +1,9 @@
 package com.github.mlangc.vcs.bench.util.zio
 
-import scalaz.zio.ZIO
-import scalaz.zio.clock.Clock
-import scalaz.zio.clock
-import scalaz.zio.duration.Duration
+import zio.ZIO
+import zio.clock.Clock
+import zio.clock
+import zio.duration.Duration
 
 object StopWatch {
   def timed[R, E, A](zio: ZIO[R, E, A]): ZIO[R with Clock, E, ResultWithDuration[A]] =

@@ -11,8 +11,8 @@ import org.tmatesoft.svn.core.wc.SVNRevision
 import org.tmatesoft.svn.core.wc.SVNUpdateClient
 import org.tmatesoft.svn.core.wc.SVNWCClient
 import org.tmatesoft.svn.core.wc.admin.SVNAdminClient
-import scalaz.zio.Managed
-import scalaz.zio.Task
+import zio.Managed
+import zio.Task
 
 object SvnKitInterpreter {
   private val logger = new ZioLogger[SvnKitInterpreter]

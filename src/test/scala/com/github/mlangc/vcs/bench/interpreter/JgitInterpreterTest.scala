@@ -3,8 +3,8 @@ package com.github.mlangc.vcs.bench.interpreter
 import java.io.File
 
 import org.eclipse.jgit.api.Git
-import scalaz.zio.Task
-import scalaz.zio.ZManaged
+import zio.Task
+import zio.ZManaged
 
 import scala.collection.JavaConverters._
 

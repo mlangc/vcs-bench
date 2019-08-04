@@ -2,8 +2,8 @@ package com.github.mlangc.vcs.bench.interpreter
 
 import com.github.mlangc.vcs.bench.model.History
 import com.github.mlangc.vcs.bench.model.Operation
-import scalaz.zio.TaskR
-import scalaz.zio.ZIO
+import zio.TaskR
+import zio.ZIO
 
 trait VcmInterpreter {
   def run(op: Operation): TaskR[InterpreterEnv, Unit]

@@ -1,6 +1,6 @@
 package com.github.mlangc.vcs.bench
 
-import scalaz.zio.{Semaphore, UIO, ZIO}
+import zio.{Semaphore, UIO, ZIO}
 
 trait GlobalLock {
   def globalLock: GlobalLock.Service

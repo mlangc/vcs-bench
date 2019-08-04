@@ -3,13 +3,13 @@ package com.github.mlangc.vcs.bench.interpreter
 import java.io.File
 
 import org.tigris.subversion.svnclientadapter.{SVNClientAdapterFactory, SVNStatusKind}
-import scalaz.zio.Task
-import scalaz.zio.TaskR
-import scalaz.zio.ZManaged
+import zio.Task
+import zio.TaskR
+import zio.ZManaged
 
 abstract class SvnClientAdapterInterpreterTest extends GenericSvnInterpreterTest {
   override protected def debug: Boolean = false
-  override protected val useCustomTmpDir = None
+  override protected val useCustomTmpDir: Option[File] = None
 
   protected def flavour: SvnClientAdapterInterpreter.Flavour
 

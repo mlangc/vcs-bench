@@ -12,11 +12,10 @@ import com.github.mlangc.vcs.bench.model.History
 import com.github.mlangc.vcs.bench.model.Operation
 import com.github.mlangc.vcs.bench.util.TmpFilesSupport
 import eu.timepit.refined.auto._
-import scalaz.zio.Task
-import scalaz.zio.TaskR
-import scalaz.zio.ZManaged
-import scalaz.zio.interop.IOAutocloseableOps
-import scalaz.zio.random.Random
+import zio.Task
+import zio.TaskR
+import zio.ZManaged
+import zio.random.Random
 
 import scala.collection.JavaConverters._
 

@@ -1,9 +1,12 @@
 package com.github.mlangc.vcs.bench.model
 
 import cats.data.{Chain, NonEmptyList}
+import com.github.ghik.silencer.silent
 import com.github.mlangc.vcs.bench.BaseTest
 import com.github.mlangc.vcs.bench.model.History.{empty, generate, paths}
 import eu.timepit.refined.auto._
+
+import scala.annotation.tailrec
 
 class HistoryTest extends BaseTest {
   "Make sure that generated histories are valid and of the right length" - {
@@ -55,6 +58,7 @@ class HistoryTest extends BaseTest {
     }
   }
 
+  @silent("discarded non-Unit")
   private def assertGenerateValidHistory(len: Int): Unit = {
     val (history, validPart) = unsafeRun {
       for {
@@ -68,6 +72,7 @@ class HistoryTest extends BaseTest {
   }
 
   private def extractValidPart(history: History): History = {
+    @tailrec
     def loop(paths: Set[Path],
              remaining: History,
              validated: History): History = {

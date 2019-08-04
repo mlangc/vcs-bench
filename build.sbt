@@ -51,13 +51,14 @@ scalacOptions ++= Seq(
   "-Ywarn-unused:params",              // Warn if a value parameter is unused.
   "-Ywarn-unused:patvars",             // Warn if a variable bound in a pattern is unused.
   "-Ywarn-unused:privates",            // Warn if a private member is unused.
-//  "-Ywarn-value-discard"               // Warn when non-Unit expression results are unused.
-)
-
-scalacOptions in Test --= Seq(
   "-Ywarn-value-discard"               // Warn when non-Unit expression results are unused.
 )
 
+val silencerVersion = "1.4.2"
+libraryDependencies ++= Seq(
+  compilerPlugin("com.github.ghik" %% "silencer-plugin" % silencerVersion),
+  "com.github.ghik" %% "silencer-lib" % silencerVersion % Provided
+)
 
 val refinedVersion = "0.9.4"
 
@@ -73,10 +74,10 @@ libraryDependencies += "org.typelevel" %% "cats-core" % catsVersion
 libraryDependencies += "org.typelevel" %% "cats-testkit" % catsVersion % Test
 libraryDependencies += "org.typelevel" %% "cats-effect" % "1.2.0"
 
-val zioVersion = "1.0-RC4"
-libraryDependencies += "org.scalaz" %% "scalaz-zio" % zioVersion
-libraryDependencies += "org.scalaz" %% "scalaz-zio-streams" % zioVersion
-libraryDependencies += "org.scalaz" %% "scalaz-zio-interop-cats" % zioVersion
+val zioVersion = "1.0.0-RC10-1"
+libraryDependencies += "dev.zio" %% "zio" % zioVersion
+libraryDependencies += "dev.zio" %% "zio-streams" % zioVersion
+libraryDependencies += "dev.zio" %% "zio-interop-cats" % "1.3.1.0-RC3"
 
 libraryDependencies += "org.apache.commons" % "commons-lang3" % "3.8.1"
 

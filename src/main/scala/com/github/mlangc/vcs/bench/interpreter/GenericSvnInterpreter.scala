@@ -6,8 +6,8 @@ import com.github.mlangc.vcs.bench.logging.ZioLogger
 import com.github.mlangc.vcs.bench.model.Lines
 import com.github.mlangc.vcs.bench.model.Operation
 import com.github.mlangc.vcs.bench.model.Path
-import scalaz.zio.Task
-import scalaz.zio.UIO
+import zio.Task
+import zio.UIO
 
 abstract class GenericSvnInterpreter(protected val projectDir: File) extends VcmInterpreter {
   private val logger = new ZioLogger[GenericSvnInterpreter]

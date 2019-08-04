@@ -5,9 +5,10 @@ import java.nio.file.Files
 
 import com.github.mlangc.vcs.bench.logging.ZioLogger
 import org.apache.commons.io.FileUtils
-import scalaz.zio.Managed
-import scalaz.zio.Task
-import scalaz.zio.UIO
+
+import _root_.zio.Managed
+import _root_.zio.UIO
+import _root_.zio.Task
 
 trait TmpFilesSupport {
   private val logger = new ZioLogger[TmpFilesSupport]

@@ -8,10 +8,10 @@ import com.github.mlangc.vcs.bench.model.Operation
 import com.github.mlangc.vcs.bench.model.Path
 import org.apache.commons.io.FileUtils
 import org.eclipse.jgit.api.Git
-import scalaz.zio.Task
-import scalaz.zio.TaskR
-import scalaz.zio.UIO
-import scalaz.zio.ZManaged
+import zio.Task
+import zio.TaskR
+import zio.UIO
+import zio.ZManaged
 
 object JgitInterpreter {
   def init(dir: File): ZManaged[InterpreterEnv, Throwable, JgitInterpreter] = {

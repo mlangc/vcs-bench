@@ -3,7 +3,7 @@ package com.github.mlangc.vcs.bench.util.perf
 import cats.Monoid
 import cats.data.Chain
 import com.github.mlangc.vcs.bench.util.perf.PerfStats.Summary
-import scalaz.zio.duration.Duration
+import zio.duration.Duration
 import cats.syntax.option._
 
 import scala.math.sqrt

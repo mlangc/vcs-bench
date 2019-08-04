@@ -9,10 +9,10 @@ import org.tmatesoft.svn.core.wc.ISVNStatusHandler
 import org.tmatesoft.svn.core.wc.SVNClientManager
 import org.tmatesoft.svn.core.wc.SVNRevision
 import org.tmatesoft.svn.core.wc.SVNStatus
-import scalaz.zio.Managed
-import scalaz.zio.Task
-import scalaz.zio.UIO
-import scalaz.zio.ZIO
+import zio.Managed
+import zio.Task
+import zio.UIO
+import zio.ZIO
 
 class SvnKitInterpreterTest extends GenericSvnInterpreterTest {
   private val logger = new ZioLogger[GenericInterpreterTest]

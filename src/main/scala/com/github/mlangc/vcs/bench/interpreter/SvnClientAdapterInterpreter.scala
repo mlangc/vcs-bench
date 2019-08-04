@@ -8,7 +8,7 @@ import org.tigris.subversion.svnclientadapter._
 import org.tigris.subversion.svnclientadapter.commandline.CmdLineClientAdapterFactory
 import org.tigris.subversion.svnclientadapter.javahl.JhlClientAdapterFactory
 import org.tigris.subversion.svnclientadapter.svnkit.SvnKitClientAdapterFactory
-import scalaz.zio._
+import zio._
 
 object SvnClientAdapterInterpreter {
   sealed abstract class Flavour(val clientType: String)

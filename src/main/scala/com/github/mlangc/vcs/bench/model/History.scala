@@ -4,10 +4,10 @@ import cats.data.{Chain, NonEmptyList}
 import cats.syntax.option._
 import com.github.mlangc.vcs.bench.UIOR
 import org.apache.commons.lang3.RandomStringUtils
-import scalaz.zio.{UIO, ZIO, random}
-import scalaz.zio.random.Random
-import scalaz.zio.stream.ZStream
-import scalaz.zio.syntax._
+import zio.{UIO, ZIO, random}
+import zio.random.Random
+import zio.stream.ZStream
+import zio.syntax._
 
 import scala.annotation.tailrec
 
@@ -15,9 +15,6 @@ object History {
   def stream: ZStream[Random, Nothing, Operation] = {
     ???
   }
-
-  def generateNew(len: Int): ZIO[Random, Nothing, History] =
-    stream.take(len).foldLeft(History.empty)((history, operation) => history :+ operation)
 
   def generate(len: Int): ZIO[Random, Nothing, History] = {
     def loop(paths: Set[Path], operations: List[Operation], n: Int): ZIO[Random, Nothing, List[Operation]] = {
@@ -74,7 +71,7 @@ object History {
     def tryNextOperationWithInd(ind: Int): ZIO[Random, Nothing, Option[(Set[Path], Operation)]] = {
       ind match {
         case 0 =>
-          if (operations.headOption.map(_.isCommit).getOrElse(true)) ZIO.succeed(none)
+          if (operations.headOption.forall(_.isCommit)) ZIO.succeed(none)
           else nextCommit().map(commit => (paths, commit).some)
 
         case 1 =>

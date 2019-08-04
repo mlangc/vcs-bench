@@ -1,10 +1,10 @@
 package com.github.mlangc.vcs.bench.convenience
 
-import scalaz.zio.Task
-import scalaz.zio.UIO
-import scalaz.zio.ZIO
-import scalaz.zio.blocking.Blocking
-import scalaz.zio.blocking.blocking
+import _root_.zio.Task
+import _root_.zio.UIO
+import _root_.zio.ZIO
+import _root_.zio.blocking.Blocking
+import _root_.zio.blocking.blocking
 
 package object zio {
   def blockingTask[A](a: => A): ZIO[Blocking, Throwable, A] = blocking(Task(a))
